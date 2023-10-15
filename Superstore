@@ -1,4 +1,4 @@
-#This project utilizes the following data
+# This project utilizes the following data
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -26,28 +26,27 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
-#Order the items by price
+# Order the store items by highest price to lowest price
 SELECT item_id, item_name, price
 FROM superstore
 ORDER BY price DESC;
 
-#Highest priced item by category
+# What is the highest-priced item in each shopping category?
 SELECT category, item_name, MAX(price)
 FROM superstore
 GROUP BY category;
 
-#Average price and count of items for the category Kitchen Supplies
+# What is the average price within each category, and how many items are in each category?
 SELECT category, AVG(price), COUNT(item_name)
 FROM superstore
 WHERE category = 'Kitchen Supplies';
 
-#On-hand quantity of each item ordered highest to lowest
+# What is the on-hand quantity of each item ordered from largest to smallest?
 SELECT item_name, stock_quantity
 FROM superstore
 ORDER BY stock_quantity DESC;
 
-#Sum of on-hand quantity by category ordered highest to lowest 
+# What is the on-hand quantity of the Electronics category?
 SELECT category, SUM(stock_quantity)
 FROM superstore
-GROUP BY category
-ORDER BY SUM(stock_quantity) DESC;
+WHERE category = 'Electronics';
