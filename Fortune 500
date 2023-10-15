@@ -1,3 +1,4 @@
+#This project utilizes the following data
 CREATE TABLE fortune_companies (
     company_id INTEGER PRIMARY KEY,
     company_name TEXT,
@@ -56,7 +57,7 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
-# Which industries have an average PTO in days of at least 20 days, and what are their average PTO days?
+# Which industries have an average PTO in days of at least 20 days, and what is their PTO offered?
 SELECT industry, round(avg(paid_time_off_days)) AS avg_pto_days
 FROM fortune_companies
 GROUP BY industry
