@@ -1,0 +1,8 @@
+SELECT titles.show_id, titles.title, titles.type, people.director
+FROM "netflix_titles_info" titles
+LEFT JOIN "netflix_people" people
+ON titles.show_id = people.show_id;
+
+SELECT COUNT(*)
+FROM "netflix_titles_info"
+WHERE type='Movie';
