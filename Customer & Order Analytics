@@ -84,7 +84,7 @@ HAVING count(orderid) >=3;
 
 #10 How many of each type of headphones were sold in February?
 
-SELECT distinct product, sum(quantity)
+SELECT product, sum(quantity)
 FROM BIT_DB.FebSales
 WHERE product LIKE '%headphones%'
 GROUP BY product;
